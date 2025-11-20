@@ -18,7 +18,7 @@ Running the export on efs3
 --------------------------
 ```
 # shell variables for clarity; adjust credentials/paths as needed
-DB=efs3
+DB=wikidb
 CNF=/root/.my.cnf
 OUT=manual_procedure_dump.sql
 
@@ -30,7 +30,7 @@ Transferring/importing
 ----------------------
 1. `scp manual_procedure_dump.sql` to your workstation, then into the `mariadb-mw1359` container.
 2. On sh0re/sh1re, import with:
-   `mysql --defaults-file=/opt/mediawiki/.my.cnf targetwiki < manual_procedure_dump.sql`
+   `mysql --defaults-file=/opt/mediawiki/.my.cnf wikidb < manual_procedure_dump.sql`
 3. The import can safely be re-run; each row is keyed by `(tag_id, page_id, rev_id)` so later
    loads simply replace matching data.
 
