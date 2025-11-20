@@ -40,3 +40,8 @@ With the data staged in `manual_procedure_dump`, you can:
 - dedupe / audit tagged revisions before promoting into the main namespaces,
 - wire the new CustomQueryPage extension to read from this table,
 - or rehydrate pages via the MediaWiki maintenance scripts using the exported wikitext.
+
+
+Background
+----------
+Prior to MediaWiki 1.35, the SQL code that created the core tables for any MediaWiki version—with extensive comments—was in the maintenance/tables.sql source file. Up to MediaWiki 1.37 maintenance/tables.sql continued to be partially in use as some tables hadn't been migrated to maintenance/tables.json yet. 
