@@ -2,13 +2,13 @@
 -- from MediaWiki 1.24.2 for downstream import work.
 --
 -- Usage (run on the RHEL6 efs3 host):
---   mysql --defaults-file=/root/.my.cnf efs3 < scripts/manual_procedure_dump.sql
---   mysqldump --defaults-file=/root/.my.cnf --skip-add-drop-table --replace efs3 manual_procedure_dump \
+--   mysql --defaults-file=/root/.my.cnf wikidb < scripts/manual_procedure_dump.sql
+--   mysqldump --defaults-file=/root/.my.cnf --skip-add-drop-table --replace wikidb manual_procedure_dump \
 --       > manual_procedure_dump.sql
 --
 -- The resulting manual_procedure_dump.sql can be copied to sh0re/sh1re and
 -- imported with:
---   mysql --defaults-file=/root/.my.cnf targetwiki < manual_procedure_dump.sql
+--   mysql --defaults-file=/root/.my.cnf wikidb < manual_procedure_dump.sql
 --
 -- The script is idempotent; rerunning will rebuild the staging table with the
 -- latest tagged state.
